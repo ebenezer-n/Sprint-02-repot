@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon CV Sémantique</title>
+</head>
+<body>
+
+    <header>
+        <h1>[Ton Prénom] [Ton Nom]</h1>
+        <p>Étudiant en Programmation Web</p>
+        <p>Email : <a href="mailto:monemail@ecole.com">monemail@ecole.com</a></p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Profil Professionnel</h2>
+            <p>Développeur en formation, rigoureux et passionné par la structure logique du web.</p>
+        </section>
+
+        <section>
+            <h2>Expériences Professionnelles</h2>
+            <ul>
+                <li>
+                    <h3>Projet Sprint 01 - Initiation</h3>
+                    <p>Découverte de l'environnement de développement et de la gestion de fichiers.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Formations</h2>
+            <ol>
+                <li>
+                    <h3>Cursus Informatique &amp; Web</h3>
+                    <p>Ordinateur de l'école, Juin 2026</p>
+                </li>
+            </ol>
+        </section>
+    </main>
+
+    <footer>
+        <p>Document HTML5 pur — Projet Sprint 02.</p>
+    </footer>
+
+</body>
+</html>
