@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon CV HTML5 Pur</title>
+</head>
+<body>
+
+    <!-- 1. ZONE HEADER : Tout en haut de ton dessin -->
+    <header>
+        <!-- Photo (à gauche sur ton schéma) -->
+        <figure>
+            <img src="profil.jpg" alt="Ma photo de profil" width="150" height="150">
+            <figcaption>Photo de profil</figcaption>
+        </figure>
+
+        <!-- Nom, Titre et Contacts (à droite sur ton schéma) -->
+        <h1>NAMBIMAN Eben-Ezer</h1>
+        <p><strong>Développeur Web & Mobile Junior</strong></p>
+        <p>Contact : ebenezernambiman@gmail.com | Téléphone : +229 01 90 92 18 66</p>
+    </header>
+
+    <hr>
+
+    <!-- 2. ZONE MAIN : Le cœur de ton CV -->
+    <main>
+
+        <!-- ZONE ASIDE (Colonne de gauche sur ton schéma) -->
+        <aside>
+            <!-- Bloc Compétences -->
+            <h2>Compétences</h2>
+            <ul>
+                <li>HTML 5 ; CSS3 ; JavaScript ; PHP ; MySQL ; Git</li>
+                <li>Maintenance Informatique</li>
+                <li>Analyste Financier</li>
+            </ul>
+
+            <!-- Bloc Études -->
+            <h2>Études</h2>
+            <ul>
+                <li>Enseignement primaire (2005 - 2011)</li>
+                <li>Enseignement secondaire (2011 - 2017)</li>
+                <li>Enseignement supérieur (2017 - 2024)</li>
+                <li>IMeN BENIN</li>
+
+            </ul>
+
+            <!-- Bloc Langues -->
+            <h2>Langues</h2>
+            <ul>
+                <li>Français (Courant)</li>
+                <li>Anglais (Intermédiaire)</li>
+
+            </ul>
+
+            <!-- Bloc Hobbies -->
+            <h2>Hobbies</h2>
+            <ul>
+                <li>Lecture</li>
+                <li>Blog informatique</li>
+                <li>La musique</li>
+
+            </ul>
+        </aside>
+
+        <!-- ZONE SECTION (Colonne de droite sur ton schéma) -->
+        <section>
+            <!-- Bloc Expériences -->
+            <h2>Expériences</h2>
+            <p><strong>Sécrétaire adminitratif</strong> - CSPADD (2025 - 2026)</p>
+             <p><strong>Electicien</strong> AGS (2019 - 2021)</p>
+
+            <!-- Bloc Formations -->
+            <h2>Formations</h2>
+            <p><strong>AGS</strong> - Organisme (2019)</p>
+            <p><strong>IREDE GROUP</strong> - Organisme (2024)</p>
+
+            <!-- Bloc Diplômes -->
+            <h2>Diplômes</h2>
+            <p><strong>Ingénieur en Informatique</strong> (2026)</p>
+                <p><strong>Technicien en Informatique</strong> (2024)</p>
+                <p><strong>Licence en Finance</strong> (2023)</p>
+                    <p><strong>Master en Finance</strong> (2024)</p>
+
+            <!-- Bloc À propos de moi -->
+            <h2>À propos de moi</h2>
+            <p>Passionné par les technologies du web, j'apprends à structurer des documents de manière sémantique et accessible.</p>
+        </section>
+
+    </main>
+
+    <hr>
+
+    <!-- 3. ZONE FOOTER : Tout en bas de ton dessin -->
+    <footer>
+        <p>Liens utiles : <a href="https://linkedin.com/in/eben-ezer-nambiman">Mon LinkedIn</a></p>
+    </footer>
+
+</body>
+</html>
