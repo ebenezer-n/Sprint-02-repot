@@ -1,0 +1,119 @@
+```css
+/* ==========================================================================
+   1. LE LIVRABLE DU MARDI : RÉINITIALISATION DU MODÈLE DE BOÎTE (BOX MODEL)
+   ========================================================================== */
+
+/* Le sélecteur "*" applique cette règle à absolument TOUS les éléments du site.
+   "box-sizing: border-box" force le navigateur à inclure les marges intérieures (padding)
+   et les bordures à l'intérieur de la largeur et de la hauteur que nous définissons.
+   C'est la règle obligatoire du mardi pour éviter le chevauchement chaotique des éléments !
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========================================================================
+   2. CHARTE GRAPHIQUE GLOBALE (TECH SOMBRE)
+   ========================================================================== */
+
+/* - Couleur de fond principale (60%) : #0F172A (Bleu-nuit sombre style éditeur de code)
+   - Couleur de texte (30%) : #E2E8F0 (Gris clair pour préserver les yeux)
+   - Police de texte par défaut : 'Inter', très lisible sur smartphone
+*/
+body {
+    background-color: #0F172A;
+    color: #E2E8F0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   3. TYPOGRAPHIES ET LES TITRES (SPACE GROTESK)
+   ========================================================================== */
+
+/* Tous les titres (h1, h2, h3) utilisent la police géométrique et futuriste 'Space Grotesk'
+*/
+h1, h2, h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   4. MISE EN COULEURS (ACCENTS ET STRUCTURES)
+   ========================================================================== */
+
+/* Nom de l'artiste/développeur */
+h1 {
+    color: #FFFFFF; /* Blanc pur pour faire ressortir ton nom */
+    border-bottom: 2px solid #334155;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+/* Titre du métier */
+.titre-metier {
+    color: #10B981; /* Accentuation 10% : Vert émeraude dynamique */
+    font-weight: 500;
+}
+
+/* Titres de sections (Expériences, Formations...) */
+h2 {
+    color: #3B82F6; /* Accentuation : Bleu électrique très tech */
+    border-left: 4px solid #10B981; /* Petite barre décorative verte à gauche */
+    padding-left: 8px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+/* Les paragraphes standards */
+p {
+    color: #94A3B8; /* Gris doux pour le texte secondaire */
+    margin-bottom: 10px;
+}
+
+/* Séparateurs pour tes blocs d'expérience */
+.bloc-experience, .bloc-formation {
+    border-bottom: 1px dashed #334155;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+/* Les dates importantes */
+.date {
+    color: #10B981; /* Les dates ressortent en vert émeraude */
+    font-weight: 600;
+}
+
+/* Badges de compétences */
+.competence-badge, li {
+    background-color: #1E293B; /* Fond de boîte légèrement plus clair */
+    border: 1px solid #3B82F6; /* Bordure en bleu électrique */
+    color: #E2E8F0;
+    padding: 4px 8px;
+    border-radius: 4px; /* Coins légèrement arrondis pour un look moderne */
+}
+
+/* Liens hypertextes (Portfolio, réseaux...) */
+a {
+    color: #3B82F6;
+    text-decoration: none; /* Supprime le soulignement par défaut */
+}
+
+a:hover {
+    text-decoration: underline; /* Apparaît au survol */
+}
+
+```
+/* Stylisation de l'image de profil */
+.photo-profil {
+    display: block;
+    margin: 20px auto;       /* Centre l'image horizontalement */
+    max-width: 150px;        /* Limite sa largeur */
+    height: auto;            /* Conserve les proportions */
+    border-radius: 50%;      /* Rend la photo parfaitement ronde */
+    border: 3px solid #10B981; /* Jolie bordure verte émeraude d'accentuation */
+    background-color: #1E293B;
+}
