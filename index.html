@@ -1,105 +1,207 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
-    <title>Mon CV HTML5 Pur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV — NAMBIMAN Eben-Ezer</title>
+
+    <!-- Chargement des polices Google Fonts (Lundi : charte graphique) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Connexion au fichier CSS (Mardi : style.css relié à index.html) -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
-        <figure>
-            <img src="profil-01.webp" alt="Ma photo de profil" width="150" height="150">
-            <figcaption>Photo de profil</figcaption>
-        </figure>
+    <!-- =====================================================================
+         CONTENEUR PRINCIPAL — Mercredi : centrage via margin: auto
+         La classe "cv-container" dans style.css a max-width: 720px + margin: 0 auto
+         ===================================================================== -->
+    <div class="cv-container">
 
-        <h1>NAMBIMAN Eben-Ezer</h1>
-        <p><strong>Développeur Web &amp; Mobile Junior</strong></p>
-        <p>
-            Contact : <a href="mailto:ebenezernambiman9@gmail.com">ebenezernambiman9@gmail.com</a> ;
-            Téléphone : <a href="tel:+2290190921866">+229 01 90 92 18 66</a>
-        </p>
+        <!-- =================================================================
+             EN-TÊTE DU CV — Mercredi : mise en page inline-block (photo + infos)
+             ================================================================= -->
+        <header class="cv-header">
 
-    </header>
+            <!-- Colonne gauche : photo de profil (20% de largeur) -->
+            <div class="col-photo">
+                <img
+                    class="photo-profil"
+                    src="profil-01.webp"
+                    alt="Photo de profil de NAMBIMAN Eben-Ezer"
+                    width="120"
+                    height="120"
+                >
+            </div>
 
-    <hr>
+            <!-- Colonne droite : nom, métier, contacts (76% de largeur) -->
+            <div class="col-infos">
+                <h1>NAMBIMAN Eben-Ezer</h1>
+                <p class="titre-metier">Développeur Web &amp; Mobile Junior</p>
 
-    <main>
+                <!-- Liens de contact transformés en boutons (Mercredi : display: inline-block) -->
+                <div>
+                    <a class="lien-contact" href="mailto:ebenezernambiman9@gmail.com">
+                        ✉ Email
+                    </a>
+                    <a class="lien-contact" href="tel:+2290190921866">
+                        ✆ +229 01 90 92 18 66
+                    </a>
+                    <a class="lien-contact" href="https://linkedin.com/in/eben-ezernambiman" target="_blank">
+                        LinkedIn
+                    </a>
+                    <a class="lien-contact" href="https://github.com/ebenezer-n" target="_blank">
+                        GitHub
+                    </a>
+                </div>
+            </div>
 
-        <aside>
-            <h2>Compétences</h2>
-            <ul>
-                <li>HTML5, CSS3, JavaScript, PHP, MySQL, Git</li>
-                <li>Maintenance Informatique</li>
-                <li>Analyste Financier</li>
-            </ul>
+        </header>
 
-            <h2>Études</h2>
-            <ul>
-                <li>Enseignement primaire (2005 - 2011)</li>
-                <li>Enseignement secondaire (2011 - 2017)</li>
-                <li>Enseignement supérieur (2017 - 2024)</li>
-                <li>IMeN BENIN</li>
-            </ul>
+        <!-- =================================================================
+             CONTENU PRINCIPAL
+             ================================================================= -->
+        <main>
 
-            <h2>Langues</h2>
-            <ul>
-                <li>Français (Courant)</li>
-                <li>Anglais (Intermédiaire)</li>
-            </ul>
+            <!-- Section : À propos -->
+            <div class="cv-section">
+                <h2>À propos de moi</h2>
+                <p>
+                    Passionné par les technologies du web, j'apprends à structurer
+                    des documents de manière sémantique et accessible.
+                </p>
+            </div>
 
-            <h2>Hobbies</h2>
-            <ul>
-                <li>Lecture</li>
-                <li>Blog informatique</li>
-                <li>La musique</li>
-            </ul>
-        </aside>
+            <!-- Section : Compétences — Mercredi : badges inline-block via liste-competences -->
+            <div class="cv-section">
+                <h2>Compétences</h2>
+                <ul class="liste-competences">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>PHP</li>
+                    <li>MySQL</li>
+                    <li>Git</li>
+                    <li>Maintenance Informatique</li>
+                    <li>Analyste Financier</li>
+                </ul>
+            </div>
 
-        <section>
-            <h2>À propos de moi</h2>
-            <p>Passionné par les technologies du web, j'apprends à structurer
-            des documents de manière sémantique et accessible.</p>
+            <!-- Section : Expériences -->
+            <div class="cv-section">
+                <h2>Expériences</h2>
 
-            <h2>Expériences</h2>
-            <ul>
-                <li><strong>Développeur Web &amp; Mobile Junior</strong> - IMeN BENIN <em>(2024 - 2026)</em></li>
-                <li><strong>Sécrétaire administratif</strong> - CSPADD <em>(2025 - 2026)</em></li>
-                <li><strong>Électricien</strong> - AGS <em>(2019 - 2021)</em></li>
-            </ul>
+                <div class="bloc-experience">
+                    <p>
+                        <strong>Développeur Web &amp; Mobile Junior</strong> — IMeN BENIN
+                        <span class="date">(2024 – 2026)</span>
+                    </p>
+                </div>
 
-            <h2>Formations</h2>
-            <ul>
-                <li><strong>AGS</strong> - Formation technique <em>(2019)</em></li>
-                <li><strong>IREDE GROUP</strong> - Formation spécialisée <em>(2024)</em></li>
-            </ul>
+                <div class="bloc-experience">
+                    <p>
+                        <strong>Secrétaire Administratif</strong> — CSPADD
+                        <span class="date">(2025 – 2026)</span>
+                    </p>
+                </div>
 
-            <h2>Diplômes</h2>
-            <ul>
-                <li><strong>Ingénieur en Informatique</strong> <em>(2026)</em></li>
-                <li><strong>Technicien en Informatique</strong> <em>(2024)</em></li>
-                <li><strong>Licence en Finance</strong> <em>(2023)</em></li>
-                <li><strong>Master en Finance</strong> <em>(2024)</em></li>
-            </ul>
-        </section>
+                <div class="bloc-experience">
+                    <p>
+                        <strong>Électricien</strong> — AGS
+                        <span class="date">(2019 – 2021)</span>
+                    </p>
+                </div>
+            </div>
 
-    </main>
+            <!-- Section : Formations -->
+            <div class="cv-section">
+                <h2>Formations</h2>
 
-    <hr>
+                <div class="bloc-formation">
+                    <p>
+                        <strong>AGS</strong> — Formation technique
+                        <span class="date">(2019)</span>
+                    </p>
+                </div>
 
-    <footer>
-        <nav aria-label="Liens utiles"> Liens utiles :
-            <a href="https://linkedin.com/in/eben-ezernambiman" target="_blank">LinkedIn</a>
-            |
-            <a href="https://github.com/ebenezer-n" target="_blank">GitHub</a>
-            |
-            <a href="mailto:ebenezernambiman9@gmail.com">Email</a>
-        </nav>
-        <p><small>NAMBIMAN Eben-Ezer &copy; 2026</small></p>
-    </footer>
+                <div class="bloc-formation">
+                    <p>
+                        <strong>IREDE GROUP</strong> — Formation spécialisée
+                        <span class="date">(2024)</span>
+                    </p>
+                </div>
+
+                <div class="bloc-formation">
+                    <p>
+                        <strong>IMeN BENIN</strong> — Développement Web &amp; Mobile
+                        <span class="date">(2024 – 2026)</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Section : Diplômes -->
+            <div class="cv-section">
+                <h2>Diplômes</h2>
+
+                <div class="bloc-formation">
+                    <p><strong>Ingénieur en Informatique</strong> <span class="date">(2026)</span></p>
+                </div>
+                <div class="bloc-formation">
+                    <p><strong>Technicien en Informatique</strong> <span class="date">(2024)</span></p>
+                </div>
+                <div class="bloc-formation">
+                    <p><strong>Licence en Finance</strong> <span class="date">(2023)</span></p>
+                </div>
+                <div class="bloc-formation">
+                    <p><strong>Master en Finance</strong> <span class="date">(2024)</span></p>
+                </div>
+            </div>
+
+            <!-- Section : Études -->
+            <div class="cv-section">
+                <h2>Études</h2>
+                <ul class="liste-competences">
+                    <li>Enseignement primaire (2005 – 2011)</li>
+                    <li>Enseignement secondaire (2011 – 2017)</li>
+                    <li>Enseignement supérieur (2017 – 2024)</li>
+                    <li>IMeN BENIN</li>
+                </ul>
+            </div>
+
+            <!-- Section : Langues -->
+            <div class="cv-section">
+                <h2>Langues</h2>
+                <ul class="liste-competences">
+                    <li>Français (Courant)</li>
+                    <li>Anglais (Intermédiaire)</li>
+                </ul>
+            </div>
+
+            <!-- Section : Hobbies -->
+            <div class="cv-section">
+                <h2>Hobbies</h2>
+                <ul class="liste-competences">
+                    <li>Lecture</li>
+                    <li>Blog informatique</li>
+                    <li>Musique</li>
+                </ul>
+            </div>
+
+        </main>
+
+        <!-- =================================================================
+             PIED DE PAGE
+             ================================================================= -->
+        <footer>
+            <p><small>NAMBIMAN Eben-Ezer &copy; 2026 — IMeN BENIN</small></p>
+        </footer>
+
+    </div><!-- fin .cv-container -->
 
 </body>
 </html>
