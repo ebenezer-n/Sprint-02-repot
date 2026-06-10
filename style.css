@@ -1,13 +1,19 @@
-```css
+/* ============================================================
+   SPRINT 03 — CSS du CV | Méthode FORGE | IMeN
+   Lundi   → Charte graphique définie
+   Mardi   → Box Model & réinitialisation
+   Mercredi→ Comportement Block/Inline & Mise en page
+   Jeudi   → Pseudo-classes & unités (à venir)
+   ============================================================ */
+
 /* ==========================================================================
-   1. LE LIVRABLE DU MARDI : RÉINITIALISATION DU MODÈLE DE BOÎTE (BOX MODEL)
+   1. LIVRABLE MARDI — RÉINITIALISATION DU MODÈLE DE BOÎTE (BOX MODEL)
+   ==========================================================================
+   Le sélecteur "*" applique cette règle à TOUS les éléments du site.
+   "box-sizing: border-box" force le navigateur à inclure padding et bordures
+   à l'intérieur de la largeur/hauteur définie — évite le chaos des chevauchements.
    ========================================================================== */
 
-/* Le sélecteur "*" applique cette règle à absolument TOUS les éléments du site.
-   "box-sizing: border-box" force le navigateur à inclure les marges intérieures (padding)
-   et les bordures à l'intérieur de la largeur et de la hauteur que nous définissons.
-   C'est la règle obligatoire du mardi pour éviter le chevauchement chaotique des éléments !
-*/
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,12 +22,13 @@
 
 /* ==========================================================================
    2. CHARTE GRAPHIQUE GLOBALE (TECH SOMBRE)
+   ==========================================================================
+   Règle du 60-30-10 :
+   - 60% : #0F172A — Bleu-nuit (fond principal, style éditeur de code)
+   - 30% : #E2E8F0 — Gris clair (texte, préserve les yeux)
+   - 10% : #10B981 et #3B82F6 — Vert émeraude + Bleu électrique (accents)
    ========================================================================== */
 
-/* - Couleur de fond principale (60%) : #0F172A (Bleu-nuit sombre style éditeur de code)
-   - Couleur de texte (30%) : #E2E8F0 (Gris clair pour préserver les yeux)
-   - Police de texte par défaut : 'Inter', très lisible sur smartphone
-*/
 body {
     background-color: #0F172A;
     color: #E2E8F0;
@@ -31,11 +38,9 @@ body {
 }
 
 /* ==========================================================================
-   3. TYPOGRAPHIES ET LES TITRES (SPACE GROTESK)
+   3. TYPOGRAPHIES — TITRES (SPACE GROTESK)
    ========================================================================== */
 
-/* Tous les titres (h1, h2, h3) utilisent la police géométrique et futuriste 'Space Grotesk'
-*/
 h1, h2, h3 {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
@@ -45,75 +50,184 @@ h1, h2, h3 {
    4. MISE EN COULEURS (ACCENTS ET STRUCTURES)
    ========================================================================== */
 
-/* Nom de l'artiste/développeur */
 h1 {
-    color: #FFFFFF; /* Blanc pur pour faire ressortir ton nom */
+    color: #FFFFFF;
     border-bottom: 2px solid #334155;
     padding-bottom: 8px;
     margin-bottom: 15px;
 }
 
-/* Titre du métier */
 .titre-metier {
-    color: #10B981; /* Accentuation 10% : Vert émeraude dynamique */
+    color: #10B981;
     font-weight: 500;
 }
 
-/* Titres de sections (Expériences, Formations...) */
 h2 {
-    color: #3B82F6; /* Accentuation : Bleu électrique très tech */
-    border-left: 4px solid #10B981; /* Petite barre décorative verte à gauche */
+    color: #3B82F6;
+    border-left: 4px solid #10B981;
     padding-left: 8px;
     margin-top: 25px;
     margin-bottom: 15px;
 }
 
-/* Les paragraphes standards */
 p {
-    color: #94A3B8; /* Gris doux pour le texte secondaire */
+    color: #94A3B8;
     margin-bottom: 10px;
 }
 
-/* Séparateurs pour tes blocs d'expérience */
 .bloc-experience, .bloc-formation {
     border-bottom: 1px dashed #334155;
     padding-bottom: 12px;
     margin-bottom: 12px;
 }
 
-/* Les dates importantes */
 .date {
-    color: #10B981; /* Les dates ressortent en vert émeraude */
+    color: #10B981;
     font-weight: 600;
 }
 
-/* Badges de compétences */
-.competence-badge, li {
-    background-color: #1E293B; /* Fond de boîte légèrement plus clair */
-    border: 1px solid #3B82F6; /* Bordure en bleu électrique */
+.competence-badge {
+    background-color: #1E293B;
+    border: 1px solid #3B82F6;
     color: #E2E8F0;
     padding: 4px 8px;
-    border-radius: 4px; /* Coins légèrement arrondis pour un look moderne */
+    border-radius: 4px;
 }
 
-/* Liens hypertextes (Portfolio, réseaux...) */
 a {
     color: #3B82F6;
-    text-decoration: none; /* Supprime le soulignement par défaut */
+    text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline; /* Apparaît au survol */
+    text-decoration: underline;
 }
 
-```
-/* Stylisation de l'image de profil */
+/* ==========================================================================
+   5. MERCREDI — MISE EN PAGE PRINCIPALE (CENTRAGE DU CONTENU)
+   ==========================================================================
+   On utilise "margin: auto" sur un conteneur à largeur fixe pour centrer le CV.
+   Technique SANS Flexbox ni Grid — flux naturel des blocs.
+   display: block est la valeur par défaut d'un div, on la rend EXPLICITE ici
+   pour bien illustrer qu'un élément "block" peut être centré avec margin: auto.
+   ========================================================================== */
+
+.cv-container {
+    display: block;           /* Valeur par défaut d'un div — rendue explicite */
+    max-width: 720px;         /* Largeur maximum du CV */
+    width: 100%;              /* S'adapte aux petits écrans */
+    margin: 0 auto;           /* La magie du centrage : marges auto à gauche ET à droite */
+    background-color: #1E293B;
+    border-radius: 8px;
+    padding: 32px 40px;
+}
+
+/* ==========================================================================
+   6. MERCREDI — HEADER DU CV (INLINE-BLOCK POUR COLONNES CÔTE À CÔTE)
+   ==========================================================================
+   L'en-tête contient la photo + les infos texte côte à côte.
+   Sans Flexbox, la technique est : display: inline-block sur les deux colonnes.
+   IMPORTANT : vertical-align: top évite le décalage bizarre vers le bas.
+   ========================================================================== */
+
+.cv-header {
+    border-bottom: 2px solid #334155;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+}
+
+.col-photo {
+    display: inline-block;
+    vertical-align: top;      /* Aligne en haut, pas au bas de la ligne */
+    width: 20%;
+}
+
+.col-infos {
+    display: inline-block;
+    vertical-align: top;
+    width: 76%;               /* 20% + 76% + ~4% d'espace blanc = 100% */
+    padding-left: 16px;
+}
+
+/* ==========================================================================
+   7. MERCREDI — IMAGE DE PROFIL
+   ========================================================================== */
+
 .photo-profil {
     display: block;
-    margin: 20px auto;       /* Centre l'image horizontalement */
-    max-width: 150px;        /* Limite sa largeur */
-    height: auto;            /* Conserve les proportions */
-    border-radius: 50%;      /* Rend la photo parfaitement ronde */
-    border: 3px solid #10B981; /* Jolie bordure verte émeraude d'accentuation */
+    margin: 0 auto;           /* Centre l'image dans sa colonne */
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid #10B981;
+    background-color: #0F172A;
+}
+
+/* ==========================================================================
+   8. MERCREDI — SECTIONS DU CV (AÉRATION PAR MARGIN ET PADDING)
+   ==========================================================================
+   Chaque section est un élément block par défaut.
+   On aère via margin (espace extérieur) et padding (espace intérieur).
+   Règle d'or FORGE : aucun texte ne colle à une bordure.
+   ========================================================================== */
+
+.cv-section {
+    margin-bottom: 28px;
+}
+
+.cv-section:last-child {
+    margin-bottom: 0;         /* Pas de marge superflue sous la dernière section */
+}
+
+/* ==========================================================================
+   9. MERCREDI — BADGES DE COMPÉTENCES (INLINE-BLOCK CÔTE À CÔTE)
+   ==========================================================================
+   Les badges doivent s'afficher côte à côte (pas empilés verticalement).
+   Technique : retirer le style de liste + passer chaque <li> en inline-block.
+   On n'utilise PAS Flexbox — les inline-block suffisent et c'est le but du sprint.
+   ========================================================================== */
+
+.liste-competences {
+    list-style: none;         /* Supprime les puces */
+    padding: 0;
+    margin: 0;
+}
+
+.liste-competences li {
+    display: inline-block;    /* Côte à côte dans le flux horizontal */
+    background-color: #0F172A;
+    border: 1px solid #3B82F6;
+    color: #E2E8F0;
+    padding: 5px 12px;
+    margin: 4px 4px 4px 0;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   10. MERCREDI — LIENS DE CONTACT → BOUTONS CLIQUABLES
+   ==========================================================================
+   Un <a> est "inline" par défaut : il ne peut pas avoir de padding vertical.
+   En passant à "inline-block", il reste dans le flux du texte mais accepte
+   padding, border, et largeur — exactement ce qu'il faut pour un bouton.
+   ========================================================================== */
+
+.lien-contact {
+    display: inline-block;    /* Inline dans le flux, mais accepte padding + border */
     background-color: #1E293B;
+    border: 1px solid #10B981;
+    color: #10B981;
+    padding: 8px 16px;
+    margin: 6px 8px 6px 0;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.lien-contact:hover {
+    background-color: #10B981;
+    color: #0F172A;           /* Texte sombre sur fond vert au survol */
+    text-decoration: none;
 }
