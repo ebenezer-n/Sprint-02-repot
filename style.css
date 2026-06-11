@@ -1,101 +1,316 @@
-/* --- VARIABLES --- */
-:root {
-  --Couleur-Primaire: #440059;   /* Violet foncé */
-  --Couleur-Secondaire: #7e3e9d; /* Violet clair */
-  --Couleur-Texte: #261f22;      /* Presque noir */
-  --Couleur-Fond: #fffcff;       /* Blanc cassé */
+/* ============================================================
+   SPRINT 03 — CSS du CV | Méthode FORGE | IMeN
+   Lundi   → Charte graphique définie
+   Mardi   → Box Model & réinitialisation
+   Mercredi→ Comportement Block/Inline & Mise en page
+   Jeudi   → Pseudo-classes, unités rem, accessibilité & finition
+   ============================================================ */
+
+
+/* ==========================================================================
+   1. RÉINITIALISATION DU MODÈLE DE BOÎTE — LIVRABLE MARDI
+   ==========================================================================
+   "*" cible absolument TOUS les éléments de la page.
+   box-sizing: border-box → padding et border sont inclus dans width/height.
+   margin: 0 et padding: 0 → supprime les espacements par défaut du navigateur.
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* --- REINITIALISATION & STYLES GENERAUX --- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
+/* ==========================================================================
+   2. CHARTE GRAPHIQUE GLOBALE — LUNDI
+   ==========================================================================
+   Règle du 60-30-10 :
+   60% → #0F172A  — Bleu-nuit  (fond principal)
+   30% → #E2E8F0  — Gris clair (texte courant)
+   10% → #10B981  — Vert émeraude (accent primaire)
+         #3B82F6  — Bleu électrique (accent secondaire)
+   ========================================================================== */
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  color: var(--Couleur-Texte);
-  background-color: var(--Couleur-Fond);
-  line-height: 1.6;
-  padding: 2rem; /* Environ 32px pour respirer */
+    background-color: #0F172A;
+    color: #E2E8F0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1rem;          /* base universelle = 16px — référence pour tous les rem */
+    line-height: 1.6;         /* hauteur de ligne sans unité = 1.6× la taille de fonte */
+    padding: 1.25rem;         /* 20px ÷ 16 = 1.25rem */
 }
 
-/* --- EN-TETE (HEADER) --- */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 3px solid var(--Couleur-Secondaire);
-  padding-bottom: 1.5rem;
-  margin-bottom: 2.5rem;
+
+/* ==========================================================================
+   3. TYPOGRAPHIES — TITRES (SPACE GROTESK) — LUNDI
+   ========================================================================== */
+
+h1, h2, h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;         /* titres plus serrés que le texte courant */
 }
 
-header h1 {
-  font-size: 2.5rem; /* Grand et percutant */
-  color: var(--Couleur-Primaire);
+
+/* ==========================================================================
+   4. MISE EN COULEURS, ACCENTS ET STRUCTURES — MARDI + JEUDI (rem)
+   ========================================================================== */
+
+/* --- Nom principal --- */
+h1 {
+    font-size: 1.75rem;       /* 28px ÷ 16 — JEUDI : taille de fonte en rem */
+    color: #FFFFFF;
+    border-bottom: 2px solid #334155;
+    padding-bottom: 0.5rem;   /* 8px ÷ 16 */
+    margin-bottom: 0.75rem;   /* 12px ÷ 16 */
 }
 
-header p {
-  font-size: 1.2rem;
-  font-style: italic;
-  color: var(--Couleur-Secondaire);
+/* --- Titre de métier --- */
+.titre-metier {
+    font-size: 1rem;          /* 16px — JEUDI : taille explicite en rem */
+    color: #10B981;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
 }
 
-/* Style pour ton bloc de coordonnées (liens) */
-.contact-info a {
-  color: var(--Couleur-Texte);
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  
-  /* CRUCIAL : On prépare une transition douce pour l'interactivité */
-  transition: all 0.3s ease-in-out; 
-}
-
-/* --- SECTIONS (EXPERIENCES, FORMATIONS) --- */
-section {
-  margin-bottom: 2.5rem;
-}
-
+/* --- Titres de sections --- */
 h2 {
-  font-size: 1.75rem;
-  color: var(--Couleur-Primaire);
-  border-bottom: 2px solid var(--Couleur-Secondaire);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
+    font-size: 1.125rem;      /* 18px ÷ 16 — JEUDI : taille de fonte en rem */
+    color: #3B82F6;
+    border-left: 4px solid #10B981;
+    padding-left: 0.5rem;     /* 8px ÷ 16 */
+    margin-top: 1.5rem;       /* 24px ÷ 16 */
+    margin-bottom: 0.9375rem; /* 15px ÷ 16 */
 }
 
-.experience-item, .formation-item {
-  margin-bottom: 1.5rem;
-}
-
+/* --- Sous-titres --- */
 h3 {
-  font-size: 1.25rem;
-  color: var(--Couleur-Secondaire);
+    font-size: 1rem;          /* JEUDI : taille explicite en rem */
+    color: #E2E8F0;
 }
 
+/* --- Paragraphes standards --- */
+p {
+    font-size: 0.9375rem;     /* 15px ÷ 16 — JEUDI : taille en rem */
+    color: #94A3B8;
+    margin-bottom: 0.625rem;  /* 10px ÷ 16 */
+}
+
+/* --- Blocs expérience / formation --- */
+.bloc-experience,
+.bloc-formation {
+    border-bottom: 1px dashed #334155;
+    padding-bottom: 0.75rem;  /* 12px ÷ 16 */
+    margin-bottom: 0.75rem;
+}
+
+.bloc-experience:last-child,
+.bloc-formation:last-child {
+    border-bottom: none;      /* JEUDI : pas de bordure sous le dernier bloc */
+    margin-bottom: 0;
+}
+
+/* --- Dates --- */
 .date {
-  font-style: italic;
-  color: #777;
-  margin-bottom: 0.5rem;
+    font-size: 0.875rem;      /* 14px ÷ 16 — JEUDI : taille en rem */
+    color: #10B981;
+    font-weight: 600;
 }
 
-ul {
-  padding-left: 1.5rem;
+/* --- Badge générique (hors liste) --- */
+.competence-badge {
+    display: inline-block;
+    background-color: #1E293B;
+    border: 1px solid #3B82F6;
+    color: #E2E8F0;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.5rem;  /* 4px 8px */
+    border-radius: 4px;
 }
 
-li {
-  margin-bottom: 0.5rem;
-}
-/* --- INTERACTIVITE (LIVRABLE DU JEUDI) --- */
 
-/* Effet au survol (souris) et au focus (clavier) sur les liens de contact */
-.contact-info a:hover, 
-.contact-info a:focus {
-  color: white;                             /* Le texte devient blanc */
-  background-color: var(--Couleur-Primaire); /* Le fond devient violet foncé */
-  outline: none;                            /* On enlève la bordure de focus par défaut */
-  box-shadow: 0 4px 8px rgba(68, 0, 89, 0.2); /* Petite ombre légère pour donner du relief */
+/* ==========================================================================
+   5. LIENS — ÉTAT PAR DÉFAUT + PSEUDO-CLASSES — MARDI + JEUDI
+   ========================================================================== */
+
+a {
+    color: #3B82F6;
+    text-decoration: none;
+}
+
+/* Survol souris */
+a:hover {
+    text-decoration: underline;
+    color: #60A5FA;           /* JEUDI : légère variation de teinte au survol */
+}
+
+/* Navigation clavier (Tab) — JEUDI : accessibilité obligatoire */
+a:focus-visible {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+    border-radius: 2px;
+    text-decoration: none;
+}
+
+
+/* ==========================================================================
+   6. CONTENEUR PRINCIPAL — MERCREDI
+   ==========================================================================
+   Centrage horizontal par margin: 0 auto sur un bloc à largeur définie.
+   Technique pure Block/Inline — sans Flexbox ni Grid.
+   ========================================================================== */
+
+.cv-container {
+    display: block;           /* valeur par défaut d'un div — rendue explicite */
+    max-width: 720px;         /* largeur max du CV */
+    width: 100%;              /* occupe tout l'écran sur mobile */
+    margin: 0 auto;           /* centre le bloc : marges auto gauche + droite */
+    background-color: #1E293B;
+    border-radius: 8px;
+    padding: 2rem 2.5rem;     /* 32px haut/bas, 40px gauche/droite */
+}
+
+
+/* ==========================================================================
+   7. EN-TÊTE DU CV — COLONNES INLINE-BLOCK — MERCREDI
+   ==========================================================================
+   Deux colonnes côte à côte via display: inline-block.
+   vertical-align: top évite le décalage vers le bas (alignement par défaut = baseline).
+   ========================================================================== */
+
+.cv-header {
+    border-bottom: 2px solid #334155;
+    padding-bottom: 1.5rem;   /* 24px ÷ 16 */
+    margin-bottom: 1.5rem;
+}
+
+.col-photo {
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+}
+
+.col-infos {
+    display: inline-block;
+    vertical-align: top;
+    width: 76%;               /* 20% + 76% = 96% — les 4% absorbent l'espace blanc inline */
+    padding-left: 1rem;       /* 16px ÷ 16 */
+}
+
+
+/* ==========================================================================
+   8. IMAGE DE PROFIL — MERCREDI
+   ========================================================================== */
+
+.photo-profil {
+    display: block;           /* block pour que margin: auto fonctionne */
+    margin: 0 auto;           /* centre l'image dans sa colonne */
+    width: 100%;
+    max-width: 120px;
+    height: auto;             /* conserve les proportions */
+    border-radius: 50%;       /* cercle parfait */
+    border: 3px solid #10B981;
+    background-color: #0F172A;
+}
+
+
+/* ==========================================================================
+   9. SECTIONS DU CV — AÉRATION — MERCREDI
+   ========================================================================== */
+
+.cv-section {
+    margin-bottom: 1.75rem;   /* 28px ÷ 16 */
+}
+
+.cv-section:last-child {
+    margin-bottom: 0;         /* pas de marge superflue sous la dernière section */
+}
+
+
+/* ==========================================================================
+   10. BADGES DE COMPÉTENCES — INLINE-BLOCK — MERCREDI
+   ==========================================================================
+   list-style: none retire les puces.
+   display: inline-block sur chaque li → badges côte à côte, pas empilés.
+   ========================================================================== */
+
+.liste-competences {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.liste-competences li {
+    display: inline-block;
+    background-color: #0F172A;
+    border: 1px solid #3B82F6;
+    color: #E2E8F0;
+    font-size: 0.85rem;
+    padding: 0.3125rem 0.75rem; /* 5px 12px */
+    margin: 0.25rem 0.25rem 0.25rem 0;
+    border-radius: 4px;
+}
+
+
+/* ==========================================================================
+   11. BOUTONS DE CONTACT — INLINE-BLOCK + PSEUDO-CLASSES — MERCREDI + JEUDI
+   ==========================================================================
+   <a> est inline par défaut → ignore padding vertical.
+   display: inline-block → accepte padding complet + border + border-radius.
+   :hover      → inversion des couleurs au survol souris.
+   :focus-visible → contour visible pour navigation clavier (JEUDI).
+   :active     → compression au clic (JEUDI).
+   ========================================================================== */
+
+.lien-contact {
+    display: inline-block;
+    background-color: #1E293B;
+    border: 1px solid #10B981;
+    color: #10B981;
+    font-size: 0.875rem;      /* 14px ÷ 16 */
+    font-weight: 500;
+    padding: 0.5rem 1rem;     /* 8px 16px */
+    margin: 0.375rem 0.5rem 0.375rem 0;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease; /* JEUDI : animation douce */
+}
+
+/* Survol souris */
+.lien-contact:hover {
+    background-color: #10B981;
+    color: #0F172A;
+    text-decoration: none;
+}
+
+/* Navigation clavier — JEUDI : accessibilité obligatoire */
+.lien-contact:focus-visible {
+    outline: 2px solid #10B981;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* Pendant le clic — JEUDI */
+.lien-contact:active {
+    background-color: #059669; /* vert légèrement plus foncé — retour tactile */
+    color: #0F172A;
+    outline: none;
+}
+
+
+/* ==========================================================================
+   12. FOOTER — JEUDI
+   ========================================================================== */
+
+footer {
+    border-top: 1px dashed #334155;
+    margin-top: 1.75rem;      /* respiration au-dessus du footer */
+    padding-top: 1rem;        /* espace intérieur entre bordure et texte */
+}
+
+footer p {
+    font-size: 0.75rem;       /* 12px ÷ 16 — texte discret */
+    color: #64748B;
+    text-align: center;
 }
