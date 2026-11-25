@@ -32,7 +32,7 @@ Ce CV a été conçu afin de :
 
 Développeur Web & Mobile Junior
 
-📧 ebenezernambiman9@gmail.com
+📧 ebenezernambiman@gmail.com
 
 📞 +229 01 90 92 18 66
 
